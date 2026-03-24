@@ -2924,6 +2924,7 @@ export default function HotDealsPage() {
           margin-bottom: 0.85rem;
           display: -webkit-box;
           -webkit-line-clamp: 2;
+          line-clamp: 2;
           -webkit-box-orient: vertical;
           overflow: hidden;
           min-height: 2.4em;
@@ -2964,6 +2965,15 @@ export default function HotDealsPage() {
         @media (max-width: 640px) {
           .hd-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
           .hd-header { flex-direction: column; align-items: flex-start; }
+          .hd-info { padding: 0.75rem; }
+          .hd-name { font-size: 0.8rem; margin-bottom: 0.4rem; min-height: 2em; }
+          .hd-price-new { font-size: 0.95rem; }
+          .hd-price-old { font-size: 0.7rem; }
+          .hd-save { font-size: 0.55rem; padding: 0.15rem 0.3rem; }
+          .hd-disc-badge, .hd-hot-badge { padding: 0.2rem 0.5rem; font-size: 0.6rem; top: 0.5rem; }
+          .hd-disc-badge { left: 0.5rem; }
+          .hd-hot-badge { right: 0.5rem; }
+          .hd-quick-buy { display: none; }
         }
       `}</style>
 

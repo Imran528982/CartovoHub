@@ -216,6 +216,11 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+*, *::before, *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -314,7 +319,7 @@ button {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-secondary);
-  transition: var(--transition-fast);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
   position: relative;
   white-space: nowrap;
 }
@@ -971,7 +976,7 @@ button {
   transition: var(--transition-smooth);
   cursor: pointer;
   position: relative;
-  group: product;
+  container-type: inline-size;
 }
 
 .product-card:hover {
@@ -1112,6 +1117,7 @@ button {
   line-height: 1.3;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1425,7 +1431,16 @@ button {
   .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .category-card { padding: 1.25rem 1rem; }
 
-  .products-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; max-width: none; }
+  
+  .product-info { padding: 0.75rem; }
+  .product-name { font-size: 0.8rem; margin-bottom: 0.3rem; }
+  .product-price { font-size: 0.9rem; }
+  .product-price .original-price { font-size: 0.7rem; }
+  .commission-badge { padding: 0.15rem 0.3rem; font-size: 0.55rem; }
+  .product-badge { padding: 0.2rem 0.5rem; font-size: 0.6rem; top: 0.5rem; left: 0.5rem; }
+  .product-quick-add { display: none; /* Hide on mobile to simplify view */ }
+  .product-rating { flex-wrap: wrap; margin-bottom: 0.4rem; }
 
   .cta-inner { padding: 2.5rem 1.5rem; }
   .cta-features { flex-direction: column; align-items: center; }
